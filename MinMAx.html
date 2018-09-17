@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MM</title>
+</head>
+<body>
+<script>
+    function randomArr(max) {
+        let randomArrLenght = Math.round(Math.random() * max);
+        let outputArr = [];
+        for (let i = 0; i < randomArrLenght; i++) {
+            outputArr.push(Math.round(Math.random() * max));
+        }
+        return outputArr;
+    }
+
+    function displayArr(arr, width) {
+        let write = "";
+        for (let i = 0; i < arr.length; i++) {
+            if (i % width === 0) {
+                write += "<br>";
+            }
+            write += " " + arr[i];
+        }
+        document.write(write);
+    }
+
+    function findMax(arr) {
+        let max = arr[0];
+        for (let e of arr) {
+            if (e > max) {
+                max = e;
+            }
+        }
+        return max;
+    }
+
+    function findMin(arr) {
+        let min = arr[0];
+        for (let e of arr) {
+            if (e < min) {
+                min = e;
+            }
+        }
+        return min;
+    }
+
+
+    let arry = randomArr(100);
+    displayArr(arry);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("max: "+findMax(arry));
+    document.write("<br>");
+    document.write("min: "+findMin(arry));
+
+
+</script>
+</body>
+</html>
